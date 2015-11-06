@@ -7,18 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TRImageView.h"
 @interface TuWanImageCell : UITableViewCell
 //题目
 @property(nonatomic,strong)UILabel *titleLb;
 //评论
 @property(nonatomic,strong)UILabel *clicksNumber;
 //图片1
-@property(nonatomic,strong)UIImageView *iconIV1;
+@property(nonatomic,strong)TRImageView *iconIV1;
 //图片2
-@property(nonatomic,strong)UIImageView *iconIV2;
+@property(nonatomic,strong)TRImageView *iconIV2;
 //图片3
-@property(nonatomic,strong)UIImageView *iconIV3;
+@property(nonatomic,strong)TRImageView *iconIV3;
 
 
 @end

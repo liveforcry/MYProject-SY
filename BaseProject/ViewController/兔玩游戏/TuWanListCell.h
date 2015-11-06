@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TRImageView.h"
 @interface TuWanListCell : UITableViewCell
 //题目
 @property(nonatomic,strong)UILabel *titleLB;
 //左侧图片
-@property(nonatomic,strong)UIImageView *iconIV;
+@property(nonatomic,strong)TRImageView *iconIV;
 //
 @property(nonatomic,strong)UILabel *longTitleLB;
 //

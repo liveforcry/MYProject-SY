@@ -10,12 +10,116 @@
 #import "TuWanListCell.h"
 #import "TuWanViewModel.h"
 #import "TuWanImageCell.h"
-@interface TuWanListViewController ()
+#import "iCarousel.h"
+@interface TuWanListViewController ()<iCarouselDataSource,iCarouselDelegate>  //映入 ic 的来个协议
+{
+    //添加成员变量 因为不需要懒加载 所以不需要是属性
+    UIPageControl *_pagecontrol;
+    iCarousel *_ic;
+    UILabel *_titleLb;
+}
 @property(nonatomic,strong)TuWanViewModel *TuWanVM;
+@property(nonatomic,strong)iCarousel *ic ; // 用于
+@property(nonatomic,strong)NSTimer *timer;
 @end
 
 @implementation TuWanListViewController
 
+-(UIView *)headerView{
+    //头部视图 origin 无效 宽度无效 肯定是与table 同宽的
+    [_timer invalidate];
+    //750 * 500
+    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, kWindowW * 500 / 750)];
+    //如果头部不存在就返回空
+    if(!self.TuWanVM.isExistIndexPic)  return nil;
+    //添加底部视图
+    UIView *bottomView = [UIView new];
+    bottomView.backgroundColor = kRGBColor(240, 240, 240);
+    [headView addSubview:bottomView];
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.mas_equalTo(10);
+        make.height.mas_equalTo(35);
+        make.right.mas_equalTo(-10);
+    }];
+    _titleLb = [UILabel new];
+    [bottomView addSubview:_titleLb];
+    [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.centerY.mas_equalTo(0);
+    }];
+    _pagecontrol = [UIPageControl new];
+    _pagecontrol.numberOfPages = self.TuWanVM.indexPicNumber;
+    _pagecontrol.userInteractionEnabled = NO;
+    [bottomView addSubview:_pagecontrol];
+    [_pagecontrol mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-10);
+        make.centerY.mas_equalTo(0);
+//        make.width.mas_lessThanOrEqualTo(20);
+//        make.width.mas_greaterThanOrEqualTo(60);
+        make.width.mas_lessThanOrEqualTo(60);
+        make.width.mas_greaterThanOrEqualTo(20);
+        make.left.mas_equalTo(_titleLb.mas_right).mas_equalTo(-10);
+    }];
+    _titleLb.text = [self.TuWanVM titleForRowInIndexPic:0];
+    _ic = [iCarousel new];
+    [headView addSubview:_ic
+     ];
+    [_ic mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
+    }];
+    _ic.delegate = self;
+    _ic.dataSource = self;
+    _ic.pagingEnabled = YES;
+    _ic.scrollSpeed = 1;
+    //如果自由一张图
+    _pagecontrol.hidesForSinglePage  = YES;
+    _ic.scrollEnabled = self.TuWanVM.indexPicNumber != 1;
+    _pagecontrol.pageIndicatorTintColor = [UIColor grayColor];
+    _pagecontrol.currentPageIndicatorTintColor = [UIColor redColor];
+    if (self.TuWanVM.indexPicNumber > 1) {
+        _timer= [NSTimer bk_scheduledTimerWithTimeInterval:3 block:^(NSTimer *timer) {
+            [self.ic scrollToItemAtIndex:_ic.currentItemIndex + 1 animated:YES];
+            
+        } repeats:YES];
+    }
+    return headView;
+}
+#pragma mark icarouser 
+-(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
+    return self.TuWanVM.indexPicNumber;
+}
+//滚动到当前view
+-(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+//    NSLog(@"%ld", carousel.currentItemIndex);
+    _titleLb.text = [self.TuWanVM titleForRowInIndexPic:carousel.currentItemIndex];
+    _pagecontrol.currentPage = carousel.currentItemIndex;
+    
+}
+-(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+    if (!view) {
+        view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW,  kWindowW * 500 / 750 - 35)];
+        UIImageView *iamge = [UIImageView new];
+        [view addSubview:iamge];
+        iamge.tag =100;
+        iamge.contentMode =2;
+        iamge.clipsToBounds  = YES;
+        [iamge mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+        UIImageView *imageView = [(UIImageView *)view viewWithTag:100];
+        [imageView setImageWithURL:[self.TuWanVM iconURLForRowInIndexPic:index] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_4"]];
+        
+    }
+    return view;
+}
+  //允许循环滚动
+-(CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value{
+    if (option == iCarouselOptionWrap) {
+        return YES;
+    }
+    return value;
+}
 - (TuWanViewModel *)TuWanVM {
     if(_TuWanVM == nil) {
         _TuWanVM = [[TuWanViewModel alloc] initWithType:_infoType.integerValue];
@@ -31,6 +135,7 @@
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self.TuWanVM refreshDataCompletionHandle:^(NSError *error) {
             [self.tableView.header endRefreshing];
+            self.tableView.tableHeaderView = [self headerView];
             [self.tableView reloadData];
         }];
     }];
@@ -38,6 +143,7 @@
     self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self.TuWanVM getMoreDataCompletionHandle:^(NSError *error) {
             [self.tableView.footer endRefreshing];
+            self.tableView.tableHeaderView = [self headerView];
             [self.tableView reloadData];
         }];
     }];
@@ -62,13 +168,13 @@
         TuWanImageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell"];
         cell.titleLb.text = [self.TuWanVM titleForRowInList:indexPath.row];
         cell.clicksNumber.text = [self.TuWanVM clicksForRowInList:indexPath.row];
-        [cell.iconIV1 setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][0] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_1"]];
-        [cell.iconIV2 setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][1] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_2"]];
-        [cell.iconIV3 setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][2] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
+        [cell.iconIV1.iamgeView setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][0] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_1"]];
+        [cell.iconIV2.iamgeView setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][1] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_2"]];
+        [cell.iconIV3.iamgeView setImageWithURL:[self.TuWanVM iocnURLSForRowInList:indexPath.row][2] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
         return cell;
     }
     TuWanListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell" forIndexPath:indexPath];
-    [cell.iconIV setImageWithURL:[self.TuWanVM iconURLForRowInList:indexPath.row] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
+    [cell.iconIV.iamgeView setImageWithURL:[self.TuWanVM iconURLForRowInList:indexPath.row] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_3"]];
     cell.longTitleLB.text = [self.TuWanVM descForRowInList:indexPath.row];
     cell.titleLB.text = [self.TuWanVM titleForRowInList:indexPath.row];
     cell.clicksNumLB.text = [self.TuWanVM clicksForRowInList:indexPath.row];

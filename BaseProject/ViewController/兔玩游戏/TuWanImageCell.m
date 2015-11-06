@@ -78,26 +78,26 @@
     return _clicksNumber;
 }
 
-- (UIImageView *)iconIV1 {
+- (TRImageView *)iconIV1 {
     if(_iconIV1 == nil) {
-        _iconIV1 = [[UIImageView alloc] init];
+        _iconIV1 = [[TRImageView alloc] init];
         //按比例放大
 //        _iconIV1.contentMode = UIViewContentModeScaleAspectFill; // 2
     }
     return _iconIV1;
 }
 
-- (UIImageView *)iconIV2 {
+- (TRImageView *)iconIV2 {
     if(_iconIV2 == nil) {
-        _iconIV2 = [[UIImageView alloc] init];
+        _iconIV2 = [[TRImageView alloc] init];
 //        _iconIV2.contentMode = UIViewContentModeScaleAspectFill;/
     }
     return _iconIV2;
 }
 
-- (UIImageView *)iconIV3 {
+- (TRImageView *)iconIV3 {
     if(_iconIV3 == nil) {
-        _iconIV3 = [[UIImageView alloc] init];
+        _iconIV3 = [[TRImageView alloc] init];
 //        _iconIV3.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _iconIV3;

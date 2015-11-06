@@ -16,6 +16,7 @@
 		22B78BA51BEC4F1F006C0B19 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B9D1BEC4F1F006C0B19 /* WMMenuView.m */; };
 		22B78BA61BEC4F1F006C0B19 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B9F1BEC4F1F006C0B19 /* WMProgressView.m */; };
 		22B78BA71BEC4F1F006C0B19 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78BA21BEC4F1F006C0B19 /* WMPageController.m */; };
+		22F63C1F1BEC7E1400370A9E /* TRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63C1E1BEC7E1400370A9E /* TRImageView.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
 		3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */; };
@@ -122,6 +123,8 @@
 		22B78BA01BEC4F1F006C0B19 /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
 		22B78BA11BEC4F1F006C0B19 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
 		22B78BA21BEC4F1F006C0B19 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		22F63C1D1BEC7E1400370A9E /* TRImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRImageView.h; path = BaseProject/TRImageView.h; sourceTree = SOURCE_ROOT; };
+		22F63C1E1BEC7E1400370A9E /* TRImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRImageView.m; path = BaseProject/TRImageView.m; sourceTree = SOURCE_ROOT; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -677,6 +680,8 @@
 				22B78B251BEC375B006C0B19 /* TuWanListCell.m */,
 				22B78B271BEC41AF006C0B19 /* TuWanImageCell.h */,
 				22B78B281BEC41AF006C0B19 /* TuWanImageCell.m */,
+				22F63C1D1BEC7E1400370A9E /* TRImageView.h */,
+				22F63C1E1BEC7E1400370A9E /* TRImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -951,6 +956,7 @@
 				38CBDDBE1BEB4755008D5ADC /* ItemDetailModel.m in Sources */,
 				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
 				22B78BA61BEC4F1F006C0B19 /* WMProgressView.m in Sources */,
+				22F63C1F1BEC7E1400370A9E /* TRImageView.m in Sources */,
 				382A8FF21BEB071500A1874C /* RankListViewController.m in Sources */,
 				38CBDDB91BEB4755008D5ADC /* HeroDetailModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,

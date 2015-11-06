@@ -11,4 +11,5 @@
 @interface TuWanListViewController : UITableViewController
 // 需要一个属性 接受外部传参
 @property(nonatomic,strong)NSNumber *infoType;
+
 @end
