@@ -49,6 +49,22 @@
 
 @property(nonatomic) NSInteger start;
 
+//当前数据类型是视频 video
+-(BOOL) isVideoInListForRow:(NSInteger )row;
+-(BOOL) isVideoInIndexPic :(NSInteger)row;
+
+//当前数据类型是视频 pic
+
+-(BOOL) isPicInListForRow:(NSInteger )row;
+-(BOOL) isPicInIndexPic :(NSInteger)row;
+
+//当前数据类型是视频 all -- html
+
+-(BOOL) isHtmlInListForRow:(NSInteger )row;
+-(BOOL) isHtmlInIndexPic :(NSInteger)row;
+
+
+
 @end
 
 

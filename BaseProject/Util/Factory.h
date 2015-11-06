@@ -12,6 +12,9 @@
 /** 向某个控制器上，添加菜单按钮 */
 + (void)addMenuItemToVC:(UIViewController *)vc;
 
+//向某个控制器上 添加返回按钮
+
++(void)addBackItemTovc :(UIViewController *)vc;
 @end
 
 

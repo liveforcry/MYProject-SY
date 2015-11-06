@@ -11,6 +11,8 @@
 #import "TuWanViewModel.h"
 #import "TuWanImageCell.h"
 #import "iCarousel.h"
+#import "TuWanHtmlViewController.h"
+#import "Factory.h"
 @interface TuWanListViewController ()<iCarouselDataSource,iCarouselDelegate>  //映入 ic 的来个协议
 {
     //添加成员变量 因为不需要懒加载 所以不需要是属性
@@ -129,7 +131,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
     [self.tableView registerClass:[TuWanListCell class] forCellReuseIdentifier:@"ListCell"];
     [self.tableView registerClass:[TuWanImageCell class] forCellReuseIdentifier:@"ImageCell"];
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -155,6 +157,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+kRemoveCellSeparator
 
 #pragma mark - Table view data source
 
@@ -182,15 +185,28 @@
     
     return cell;
 }
+//滚动栏中被选中后出发
+-(void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+ 
+    if ([self.TuWanVM isHtmlInIndexPic:index]) {
+        TuWanHtmlViewController *vc = [[TuWanHtmlViewController alloc]initWithURL:[self.TuWanVM detailURLForRowInIndexPic:index]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.TuWanVM containImages:indexPath.row] ?  135 : 90;
 
 }
 //去掉分割线
-kRemoveCellSeparator;
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   
+    if ([self.TuWanVM isHtmlInIndexPic:indexPath.row]) {
+        TuWanHtmlViewController *vc = [[TuWanHtmlViewController alloc]initWithURL:[self.TuWanVM detailURLForRowInList:indexPath.row]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 /*
 // Override to support conditional editing of the table view.

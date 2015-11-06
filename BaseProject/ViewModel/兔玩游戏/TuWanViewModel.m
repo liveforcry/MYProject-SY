@@ -113,6 +113,31 @@
     return [NSURL URLWithString:[self modelForArr:self.indexPicArr row:row].html5];
 }
 
+//当前数据类型是视频 video
+-(BOOL) isVideoInListForRow:(NSInteger )row{
+    return [[self modelForArr:self.dataArr row:row].type isEqualToString:@"Video"];
+}
+-(BOOL) isVideoInIndexPic :(NSInteger)row{
+    return [[self modelForArr:self.indexPicArr row:row].type isEqualToString:@"Video"];
+}
+
+//当前数据类型是视频 pic
+
+-(BOOL) isPicInListForRow:(NSInteger )row{
+    return [[self modelForArr:self.dataArr row:row].type isEqualToString:@"pic"];
+}
+-(BOOL) isPicInIndexPic :(NSInteger)row{
+     return [[self modelForArr:self.indexPicArr row:row].type isEqualToString:@"pic"];
+}
+
+//当前数据类型是视频 all -- html
+
+-(BOOL) isHtmlInListForRow:(NSInteger )row{
+    return [[self modelForArr:self.dataArr row:row].type isEqualToString:@"all"];
+}
+-(BOOL) isHtmlInIndexPic :(NSInteger)row{
+     return [[self modelForArr:self.indexPicArr row:row].type isEqualToString:@"all"];
+}
 @end
 
 

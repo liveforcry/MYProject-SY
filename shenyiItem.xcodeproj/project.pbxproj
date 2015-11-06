@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
+		2279238E1BEC962200B6E970 /* TuWanHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */; };
+		227923941BECA2D600B6E970 /* TuWanVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227923931BECA2D600B6E970 /* TuWanVideoModel.m */; };
+		227923971BECA2EF00B6E970 /* TuWanPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227923961BECA2EF00B6E970 /* TuWanPicModel.m */; };
 		22B78B231BEC36E2006C0B19 /* TuWanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B221BEC36E2006C0B19 /* TuWanListViewController.m */; };
 		22B78B261BEC375B006C0B19 /* TuWanListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B251BEC375B006C0B19 /* TuWanListCell.m */; };
 		22B78B291BEC41AF006C0B19 /* TuWanImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B281BEC41AF006C0B19 /* TuWanImageCell.m */; };
@@ -106,6 +109,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2279238C1BEC962200B6E970 /* TuWanHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanHtmlViewController.h; sourceTree = "<group>"; };
+		2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanHtmlViewController.m; sourceTree = "<group>"; };
+		227923921BECA2D600B6E970 /* TuWanVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanVideoModel.h; sourceTree = "<group>"; };
+		227923931BECA2D600B6E970 /* TuWanVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanVideoModel.m; sourceTree = "<group>"; };
+		227923951BECA2EF00B6E970 /* TuWanPicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanPicModel.h; sourceTree = "<group>"; };
+		227923961BECA2EF00B6E970 /* TuWanPicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanPicModel.m; sourceTree = "<group>"; };
 		22B78B211BEC36E2006C0B19 /* TuWanListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanListViewController.h; sourceTree = "<group>"; };
 		22B78B221BEC36E2006C0B19 /* TuWanListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanListViewController.m; sourceTree = "<group>"; };
 		22B78B241BEC375B006C0B19 /* TuWanListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TuWanListCell.h; path = "BaseProject/ViewController/兔玩游戏/TuWanListCell.h"; sourceTree = SOURCE_ROOT; };
@@ -367,6 +376,8 @@
 				382A8FEB1BEB06C700A1874C /* TuWanViewController.m */,
 				22B78B211BEC36E2006C0B19 /* TuWanListViewController.h */,
 				22B78B221BEC36E2006C0B19 /* TuWanListViewController.m */,
+				2279238C1BEC962200B6E970 /* TuWanHtmlViewController.h */,
+				2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */,
 			);
 			path = "兔玩游戏";
 			sourceTree = "<group>";
@@ -759,6 +770,10 @@
 			children = (
 				38CBDDAB1BEB4755008D5ADC /* TuWanModel.h */,
 				38CBDDAC1BEB4755008D5ADC /* TuWanModel.m */,
+				227923921BECA2D600B6E970 /* TuWanVideoModel.h */,
+				227923931BECA2D600B6E970 /* TuWanVideoModel.m */,
+				227923951BECA2EF00B6E970 /* TuWanPicModel.h */,
+				227923961BECA2EF00B6E970 /* TuWanPicModel.m */,
 			);
 			path = "兔玩";
 			sourceTree = "<group>";
@@ -953,6 +968,7 @@
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				38CBDDB41BEB4755008D5ADC /* BestGroupModel.m in Sources */,
 				382A8FEF1BEB06EB00A1874C /* MyInfoViewController.m in Sources */,
+				227923941BECA2D600B6E970 /* TuWanVideoModel.m in Sources */,
 				38CBDDBE1BEB4755008D5ADC /* ItemDetailModel.m in Sources */,
 				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
 				22B78BA61BEC4F1F006C0B19 /* WMProgressView.m in Sources */,
@@ -972,6 +988,7 @@
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
 				38CBDDC21BEB4755008D5ADC /* ZBCategoryModel.m in Sources */,
 				22B78B261BEC375B006C0B19 /* TuWanListCell.m in Sources */,
+				2279238E1BEC962200B6E970 /* TuWanHtmlViewController.m in Sources */,
 				38CBDD831BEB474C008D5ADC /* DuoWanNetManager.m in Sources */,
 				38CBDD781BEB442A008D5ADC /* Factory.m in Sources */,
 				38CBDDBD1BEB4755008D5ADC /* HeroWeekDataModel.m in Sources */,
@@ -994,6 +1011,7 @@
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				382A8FEC1BEB06C700A1874C /* TuWanViewController.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
+				227923971BECA2EF00B6E970 /* TuWanPicModel.m in Sources */,
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
 				38CBDDBB1BEB4755008D5ADC /* HeroSkinModel.m in Sources */,
 				38CBDDB51BEB4755008D5ADC /* FreeHeroModel.m in Sources */,
