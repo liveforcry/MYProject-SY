@@ -10,7 +10,7 @@
 #import "AppDelegate+Category.h"
 #import "LeftViewController.h"
 #import "TuWanViewController.h"
-
+#import "RankListViewController.h"
 @interface AppDelegate ()
 @end
 
@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
+//    self.window.rootViewController = [RankListViewController new];
     self.window.rootViewController = self.sideMenu;
     [self configGlobalUIStyle]; //配置全局UI样式
     return YES;

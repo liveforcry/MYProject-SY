@@ -49,6 +49,10 @@
 
 @property(nonatomic) NSInteger start;
 
+/*返回某行数据的aid*/
+-(NSString *)aidInListForRow :(NSInteger)row;
+-(NSString *)aidInPicListForRow :(NSInteger)row;
+
 //当前数据类型是视频 video
 -(BOOL) isVideoInListForRow:(NSInteger )row;
 -(BOOL) isVideoInIndexPic :(NSInteger)row;
@@ -62,7 +66,6 @@
 
 -(BOOL) isHtmlInListForRow:(NSInteger )row;
 -(BOOL) isHtmlInIndexPic :(NSInteger)row;
-
 
 
 @end

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
+		22244C701BF02A0B00A92BF9 /* TuWanPicViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22244C6F1BF02A0B00A92BF9 /* TuWanPicViewModel.m */; };
+		22244C731BF02F1900A92BF9 /* TuWanPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22244C721BF02F1900A92BF9 /* TuWanPicViewController.m */; };
+		22244C761BF049DD00A92BF9 /* XIMaCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22244C751BF049DD00A92BF9 /* XIMaCategoryCell.m */; };
+		2270437F1BF0730300A7578D /* XMLYCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2270437E1BF0730300A7578D /* XMLYCategoryViewModel.m */; };
+		227043821BF0B5E100A7578D /* XMLYAlbumViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227043811BF0B5E100A7578D /* XMLYAlbumViewModel.m */; };
 		2279238E1BEC962200B6E970 /* TuWanHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */; };
 		227923941BECA2D600B6E970 /* TuWanVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227923931BECA2D600B6E970 /* TuWanVideoModel.m */; };
 		227923971BECA2EF00B6E970 /* TuWanPicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 227923961BECA2EF00B6E970 /* TuWanPicModel.m */; };
@@ -109,6 +114,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22244C6E1BF02A0B00A92BF9 /* TuWanPicViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanPicViewModel.h; sourceTree = "<group>"; };
+		22244C6F1BF02A0B00A92BF9 /* TuWanPicViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanPicViewModel.m; sourceTree = "<group>"; };
+		22244C711BF02F1900A92BF9 /* TuWanPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanPicViewController.h; sourceTree = "<group>"; };
+		22244C721BF02F1900A92BF9 /* TuWanPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanPicViewController.m; sourceTree = "<group>"; };
+		22244C741BF049DD00A92BF9 /* XIMaCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XIMaCategoryCell.h; path = "BaseProject/ViewController/兔玩游戏/XIMaCategoryCell.h"; sourceTree = SOURCE_ROOT; };
+		22244C751BF049DD00A92BF9 /* XIMaCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XIMaCategoryCell.m; path = "BaseProject/ViewController/兔玩游戏/XIMaCategoryCell.m"; sourceTree = SOURCE_ROOT; };
+		2270437D1BF0730300A7578D /* XMLYCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLYCategoryViewModel.h; path = "BaseProject/ViewController/兔玩游戏/XMLYCategoryViewModel.h"; sourceTree = SOURCE_ROOT; };
+		2270437E1BF0730300A7578D /* XMLYCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLYCategoryViewModel.m; path = "BaseProject/ViewController/兔玩游戏/XMLYCategoryViewModel.m"; sourceTree = SOURCE_ROOT; };
+		227043801BF0B5E100A7578D /* XMLYAlbumViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLYAlbumViewModel.h; path = "BaseProject/ViewController/兔玩游戏/XMLYAlbumViewModel.h"; sourceTree = SOURCE_ROOT; };
+		227043811BF0B5E100A7578D /* XMLYAlbumViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLYAlbumViewModel.m; path = "BaseProject/ViewController/兔玩游戏/XMLYAlbumViewModel.m"; sourceTree = SOURCE_ROOT; };
 		2279238C1BEC962200B6E970 /* TuWanHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanHtmlViewController.h; sourceTree = "<group>"; };
 		2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanHtmlViewController.m; sourceTree = "<group>"; };
 		227923921BECA2D600B6E970 /* TuWanVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanVideoModel.h; sourceTree = "<group>"; };
@@ -378,6 +393,8 @@
 				22B78B221BEC36E2006C0B19 /* TuWanListViewController.m */,
 				2279238C1BEC962200B6E970 /* TuWanHtmlViewController.h */,
 				2279238D1BEC962200B6E970 /* TuWanHtmlViewController.m */,
+				22244C711BF02F1900A92BF9 /* TuWanPicViewController.h */,
+				22244C721BF02F1900A92BF9 /* TuWanPicViewController.m */,
 			);
 			path = "兔玩游戏";
 			sourceTree = "<group>";
@@ -412,6 +429,8 @@
 			children = (
 				38CBDD791BEB4719008D5ADC /* TuWanViewModel.h */,
 				38CBDD7A1BEB4719008D5ADC /* TuWanViewModel.m */,
+				22244C6E1BF02A0B00A92BF9 /* TuWanPicViewModel.h */,
+				22244C6F1BF02A0B00A92BF9 /* TuWanPicViewModel.m */,
 			);
 			path = "兔玩游戏";
 			sourceTree = "<group>";
@@ -426,6 +445,10 @@
 		382A8FE61BEB05AD00A1874C /* 喜马拉雅 */ = {
 			isa = PBXGroup;
 			children = (
+				2270437D1BF0730300A7578D /* XMLYCategoryViewModel.h */,
+				2270437E1BF0730300A7578D /* XMLYCategoryViewModel.m */,
+				227043801BF0B5E100A7578D /* XMLYAlbumViewModel.h */,
+				227043811BF0B5E100A7578D /* XMLYAlbumViewModel.m */,
 			);
 			path = "喜马拉雅";
 			sourceTree = "<group>";
@@ -693,6 +716,8 @@
 				22B78B281BEC41AF006C0B19 /* TuWanImageCell.m */,
 				22F63C1D1BEC7E1400370A9E /* TRImageView.h */,
 				22F63C1E1BEC7E1400370A9E /* TRImageView.m */,
+				22244C741BF049DD00A92BF9 /* XIMaCategoryCell.h */,
+				22244C751BF049DD00A92BF9 /* XIMaCategoryCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -968,6 +993,8 @@
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				38CBDDB41BEB4755008D5ADC /* BestGroupModel.m in Sources */,
 				382A8FEF1BEB06EB00A1874C /* MyInfoViewController.m in Sources */,
+				22244C701BF02A0B00A92BF9 /* TuWanPicViewModel.m in Sources */,
+				22244C731BF02F1900A92BF9 /* TuWanPicViewController.m in Sources */,
 				227923941BECA2D600B6E970 /* TuWanVideoModel.m in Sources */,
 				38CBDDBE1BEB4755008D5ADC /* ItemDetailModel.m in Sources */,
 				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
@@ -1004,11 +1031,13 @@
 				38CBDDB31BEB4755008D5ADC /* AllHeroModel.m in Sources */,
 				382A8FE91BEB066300A1874C /* DuoWanTabBarController.m in Sources */,
 				22B78BA71BEC4F1F006C0B19 /* WMPageController.m in Sources */,
+				2270437F1BF0730300A7578D /* XMLYCategoryViewModel.m in Sources */,
 				3885C8FB1BE8E96A009441EA /* README.md in Sources */,
 				38CBDDC11BEB4755008D5ADC /* ToolMenuModel.m in Sources */,
 				38CBDDB61BEB4755008D5ADC /* GiftModel.m in Sources */,
 				22B78BA31BEC4F1F006C0B19 /* WMFooldView.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
+				22244C761BF049DD00A92BF9 /* XIMaCategoryCell.m in Sources */,
 				382A8FEC1BEB06C700A1874C /* TuWanViewController.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
 				227923971BECA2EF00B6E970 /* TuWanPicModel.m in Sources */,
@@ -1017,6 +1046,7 @@
 				38CBDDB51BEB4755008D5ADC /* FreeHeroModel.m in Sources */,
 				22B78BA51BEC4F1F006C0B19 /* WMMenuView.m in Sources */,
 				38CBDDC51BEB4755008D5ADC /* AlbumModel.m in Sources */,
+				227043821BF0B5E100A7578D /* XMLYAlbumViewModel.m in Sources */,
 				22B78BA41BEC4F1F006C0B19 /* WMMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

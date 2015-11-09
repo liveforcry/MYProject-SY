@@ -62,7 +62,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-// video 和PIC http://api.tuwan.com/app/?aid=228024&appid=1
+// video 和PIC http://api.tuwan.com/app/?aid=226285&appid=1
 //
 //图片 aid == 226285
 //视频 aid == 228024

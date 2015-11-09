@@ -13,6 +13,8 @@
 #import "iCarousel.h"
 #import "TuWanHtmlViewController.h"
 #import "Factory.h"
+#import "TuWanPicViewController.h"
+
 @interface TuWanListViewController ()<iCarouselDataSource,iCarouselDelegate>  //映入 ic 的来个协议
 {
     //添加成员变量 因为不需要懒加载 所以不需要是属性
@@ -192,6 +194,12 @@ kRemoveCellSeparator
         TuWanHtmlViewController *vc = [[TuWanHtmlViewController alloc]initWithURL:[self.TuWanVM detailURLForRowInIndexPic:index]];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    if ([self.TuWanVM isPicInIndexPic:index]) {
+        TuWanPicViewController *vc = [[TuWanPicViewController alloc]initWithAid:[self.TuWanVM aidInPicListForRow:index]];
+        [self.navigationController pushViewController:vc animated:YES];
+      
+    }
+
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.TuWanVM containImages:indexPath.row] ?  135 : 90;
@@ -203,8 +211,14 @@ kRemoveCellSeparator
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
    
-    if ([self.TuWanVM isHtmlInIndexPic:indexPath.row]) {
+    if ([self.TuWanVM isHtmlInListForRow:indexPath.row]) {
         TuWanHtmlViewController *vc = [[TuWanHtmlViewController alloc]initWithURL:[self.TuWanVM detailURLForRowInList:indexPath.row]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if ([self.TuWanVM isPicInListForRow:indexPath.row]) {
+        TuWanPicViewController *vc = [[TuWanPicViewController alloc]initWithAid:[self.TuWanVM aidInListForRow:indexPath.row]];
+        
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

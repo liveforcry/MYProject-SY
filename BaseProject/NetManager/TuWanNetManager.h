@@ -42,7 +42,18 @@ typedef NS_ENUM(NSUInteger, InfoType) {
  *  @return 请求所在任务
  */
 + (id)getTuWanInfoWithType:(InfoType)type start:(NSInteger)start kCompletionHandle;
-
+/**
+ *  获取图片的详情页
+ */
++(id)getDetailPicWithAid : (NSString *)aid  kCompletionHandle;
+/**
+ *  获取视频的详情页
+ *
+ *  @param aid
+ *
+ *  @return
+ */
++(id)getDetailVedioWithAid :(NSString *) aid kCompletionHandle;
 @end
 
 

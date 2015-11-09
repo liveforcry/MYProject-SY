@@ -13,6 +13,6 @@
 MJCodingImplementation
 
 + (NSDictionary *)replacedKeyFromPropertyName{
-    return @{@"ID": @"id", @"desc": @"description"};
+    return @{@"ID": @"id", @"desc": @"description",@"typeName" :@"typename",@"":@""};
 }
 @end

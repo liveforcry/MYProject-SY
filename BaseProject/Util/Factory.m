@@ -38,7 +38,7 @@
     UIBarButtonItem *menuItem=[[UIBarButtonItem alloc] initWithCustomView:btn];
     //使用弹簧控件缩小菜单按钮和边缘距离
     UIBarButtonItem *spaceItem=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    spaceItem.width = -16;
+    spaceItem.width = -15;
     vc.navigationItem.leftBarButtonItems = @[spaceItem,menuItem];
 }
 @end
