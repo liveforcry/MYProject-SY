@@ -24,6 +24,10 @@
 		22B78BA51BEC4F1F006C0B19 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B9D1BEC4F1F006C0B19 /* WMMenuView.m */; };
 		22B78BA61BEC4F1F006C0B19 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78B9F1BEC4F1F006C0B19 /* WMProgressView.m */; };
 		22B78BA71BEC4F1F006C0B19 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B78BA21BEC4F1F006C0B19 /* WMPageController.m */; };
+		22C3C0501BF195F400B6800D /* MusicAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3C04F1BF195F400B6800D /* MusicAlbumCell.m */; };
+		22C3C0531BF1CC0900B6800D /* MusicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3C0521BF1CC0900B6800D /* MusicListViewController.m */; };
+		22C3C0551BF1DF9100B6800D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C3C0541BF1DF9100B6800D /* AVFoundation.framework */; };
+		22C3C0581BF1DFD400B6800D /* PlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3C0571BF1DFD400B6800D /* PlayView.m */; };
 		22F63C1F1BEC7E1400370A9E /* TRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F63C1E1BEC7E1400370A9E /* TRImageView.m */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
@@ -147,6 +151,13 @@
 		22B78BA01BEC4F1F006C0B19 /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
 		22B78BA11BEC4F1F006C0B19 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
 		22B78BA21BEC4F1F006C0B19 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		22C3C04E1BF195F400B6800D /* MusicAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicAlbumCell.h; sourceTree = SOURCE_ROOT; };
+		22C3C04F1BF195F400B6800D /* MusicAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicAlbumCell.m; sourceTree = SOURCE_ROOT; };
+		22C3C0511BF1CC0900B6800D /* MusicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListViewController.h; sourceTree = "<group>"; };
+		22C3C0521BF1CC0900B6800D /* MusicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListViewController.m; sourceTree = "<group>"; };
+		22C3C0541BF1DF9100B6800D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		22C3C0561BF1DFD400B6800D /* PlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayView.h; path = "BaseProject/ViewController/喜马拉雅/PlayView.h"; sourceTree = SOURCE_ROOT; };
+		22C3C0571BF1DFD400B6800D /* PlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayView.m; path = "BaseProject/ViewController/喜马拉雅/PlayView.m"; sourceTree = SOURCE_ROOT; };
 		22F63C1D1BEC7E1400370A9E /* TRImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRImageView.h; path = BaseProject/TRImageView.h; sourceTree = SOURCE_ROOT; };
 		22F63C1E1BEC7E1400370A9E /* TRImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRImageView.m; path = BaseProject/TRImageView.m; sourceTree = SOURCE_ROOT; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
@@ -312,6 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C3C0551BF1DF9100B6800D /* AVFoundation.framework in Frameworks */,
 				3885C90B1BE8EA70009441EA /* libz.tbd in Frameworks */,
 				3885C9091BE8EA6A009441EA /* libstdc++.tbd in Frameworks */,
 				3885C9071BE8EA62009441EA /* CoreTelephony.framework in Frameworks */,
@@ -413,6 +425,8 @@
 			children = (
 				382A8FF01BEB071500A1874C /* RankListViewController.h */,
 				382A8FF11BEB071500A1874C /* RankListViewController.m */,
+				22C3C0511BF1CC0900B6800D /* MusicListViewController.h */,
+				22C3C0521BF1CC0900B6800D /* MusicListViewController.m */,
 			);
 			path = "喜马拉雅";
 			sourceTree = "<group>";
@@ -718,6 +732,10 @@
 				22F63C1E1BEC7E1400370A9E /* TRImageView.m */,
 				22244C741BF049DD00A92BF9 /* XIMaCategoryCell.h */,
 				22244C751BF049DD00A92BF9 /* XIMaCategoryCell.m */,
+				22C3C04E1BF195F400B6800D /* MusicAlbumCell.h */,
+				22C3C04F1BF195F400B6800D /* MusicAlbumCell.m */,
+				22C3C0561BF1DFD400B6800D /* PlayView.h */,
+				22C3C0571BF1DFD400B6800D /* PlayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +845,7 @@
 		FA3445AEA3874C1D4FE61EAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22C3C0541BF1DF9100B6800D /* AVFoundation.framework */,
 				3885C90A1BE8EA70009441EA /* libz.tbd */,
 				3885C9081BE8EA6A009441EA /* libstdc++.tbd */,
 				3885C9061BE8EA62009441EA /* CoreTelephony.framework */,
@@ -989,7 +1008,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */,
+				22C3C0581BF1DFD400B6800D /* PlayView.m in Sources */,
 				38CBDDBA1BEB4755008D5ADC /* HeroGiftModel.m in Sources */,
+				22C3C0531BF1CC0900B6800D /* MusicListViewController.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				38CBDDB41BEB4755008D5ADC /* BestGroupModel.m in Sources */,
 				382A8FEF1BEB06EB00A1874C /* MyInfoViewController.m in Sources */,
@@ -1044,6 +1065,7 @@
 				3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */,
 				38CBDDBB1BEB4755008D5ADC /* HeroSkinModel.m in Sources */,
 				38CBDDB51BEB4755008D5ADC /* FreeHeroModel.m in Sources */,
+				22C3C0501BF195F400B6800D /* MusicAlbumCell.m in Sources */,
 				22B78BA51BEC4F1F006C0B19 /* WMMenuView.m in Sources */,
 				38CBDDC51BEB4755008D5ADC /* AlbumModel.m in Sources */,
 				227043821BF0B5E100A7578D /* XMLYAlbumViewModel.m in Sources */,

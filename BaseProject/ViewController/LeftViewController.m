@@ -69,7 +69,7 @@
             break;
           //
         case 1:
-            [self.sideMenuViewController setContentViewController:[RankListViewController new] animated:YES];
+            [self.sideMenuViewController setContentViewController:[RankListViewController defaultNavi] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         default:

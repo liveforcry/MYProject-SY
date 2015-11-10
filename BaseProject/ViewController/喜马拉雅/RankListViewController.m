@@ -9,6 +9,7 @@
 #import "RankListViewController.h"
 #import "XMLYCategoryViewModel.h"
 #import "XIMaCategoryCell.h"
+#import "MusicListViewController.h"
 @interface RankListViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)XMLYCategoryViewModel *ximaVM;
@@ -118,6 +119,13 @@
     [cell.iconIV.iamgeView setImageWithURL:[self.ximaVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"cell_bg_noData_1"]];
     cell.orderLB.text = @(indexPath.row + 1).stringValue;
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MusicListViewController *vc = [[MusicListViewController alloc]initWithAlbumId:[self.ximaVM albumIdForRow:indexPath.row]];
+    vc.titleForNavi = [self.ximaVM titleForRow:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*
 #pragma mark - Navigation

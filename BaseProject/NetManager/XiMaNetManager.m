@@ -16,8 +16,7 @@
 + (id)getAlbumWithId:(NSInteger)ID page:(NSInteger)pageId completionHandle:(void (^)(id, NSError *))completionHandle{
     //  %@  已经拼入 宏定义 kAlbumPath 中
     NSString *path = [NSString stringWithFormat:kAlbumPath, @(ID), @(pageId)];    NSDictionary *params = @{@"device":@"iPhone", @"key":@"ranking:album:played:1:2", @"pageId":@(pageId), @"pageSize": @20, @"position": @0, @"title": @"排行榜"};
-    NSString *woyao = [self percentPathWithPath:kRankListPath params:params];
-    NSLog(@"woyao ======== %@", woyao);
+
     return [self GET:path parameters:@{@"device": @"iPhone"} completionHandler:^(id responseObj, NSError *error) {
         completionHandle([AlbumModel objectWithKeyValues:responseObj], error);
     }];
